@@ -50,7 +50,10 @@ answer_two()
 Question 3:
 
 def answer_three():
-    return ((df[(df['Gold']-df['Gold.1'])/df['Gold.2'] == ((df['Gold']-df['Gold.1'])/df['Gold.2']).max()].iloc[0].name))
+    copy_df = df.copy()
+    copy_df = copy_df[(copy_df['Gold']>0) & (copy_df['Gold.1']>0)]
+    
+    return ((copy_df[(copy_df['Gold']-copy_df['Gold.1'])/copy_df['Gold.2'] == ((copy_df['Gold']-copy_df['Gold.1'])/copy_df['Gold.2']).max()].iloc[0].name))
 answer_three()
 
 Question 4:
