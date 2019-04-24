@@ -66,6 +66,12 @@ def answer_four():
 answer_four()
 
 Question 5:
+
+def answer_five():
+    ans = census_df['STNAME'].value_counts()
+    return ans[ans == ans.max()].index[0]
+answer_five()
+
 Question 6:
 Question 7:
 Question 8:
