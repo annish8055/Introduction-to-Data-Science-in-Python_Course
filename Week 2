@@ -75,3 +75,10 @@ answer_five()
 Question 6:
 Question 7:
 Question 8:
+
+def answer_eight():
+    ans = census_df[(census_df['REGION'] == 1) | (census_df['REGION'] == 2)]
+    an1 = ans[ans['POPESTIMATE2015'] > ans['POPESTIMATE2014']]
+    an2  = an1[an1['CTYNAME'].str.contains('^Washington*')]
+    return an2[['STNAME','CTYNAME']]
+answer_eight()
